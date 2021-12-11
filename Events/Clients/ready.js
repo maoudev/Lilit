@@ -6,6 +6,6 @@ module.exports = {
      */
     execute(client) {
         console.log("The bot is now ready!")
-        client.user.setActivity("/play", {type: "WATCHING"})
+        client.user.setActivity("/play", {type: "PLAYING"})
     }
 }

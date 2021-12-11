@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@distube/soundcloud": "^1.0.0",
     "@distube/spotify": "^1.0.0",
     "ascii-table": "^0.0.9",
     "discord.js": "^13.3.1",

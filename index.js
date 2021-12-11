@@ -6,12 +6,14 @@ client.commands = new Collection()
 
 const { DisTube } = require("distube");
 const { SpotifyPlugin } = require("@distube/spotify");
+const { SoundCloudPlugin } = require("@distube/soundcloud");
+
 
 client.distube = new DisTube(client, {
     emitNewSongOnly: true,
     leaveOnFinish: true,
     emitAddSongWhenCreatingQueue: false,
-    plugins: [new SpotifyPlugin()]
+    plugins: [new SpotifyPlugin(), new SoundCloudPlugin()]
 });
 module.exports = client;
 

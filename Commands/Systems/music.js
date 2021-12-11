@@ -28,7 +28,7 @@ module.exports = {
                 {name: "pause", value:"pause"},
                 {name: "resume", value:"resume"},
                 {name: "stop", value:"stop"},
-                {name: "shuffle", value:"shiffle"}
+                {name: "shuffle", value:"shuffle"}
             ]}]
         }
     ],
@@ -76,17 +76,21 @@ module.exports = {
                         case "pause" :
                             await queue.pause(VoiceChannel);
                             return interaction.reply({content: "La música ha sido pausada."})
-                        case "pause" :
+                        case "resume" :
                             await queue.resume(VoiceChannel);
                             return interaction.reply({content: "⏯ la canción ha sido reanudada"})
-                        case "queue" :
-                            return interaction.reply({embeds: [new MessageEmbed()
-                            .setColor("AQUA")
-                            .setDescription(`${queue.song.map((song, id) => `\n**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``)}`
-                            )]});
+
                         case "shuffle" :
                             await queue.shuffle(VoiceChannel);
-                            return interaction.reply({content: "La lista de reproducción ha sido mezclada"});
+                            return interaction.reply({content: "La lista de reproducción ha sido mezclada"}); 
+                            
+
+                        case "queue" :
+                            // return interaction.reply({embeds: [new MessageEmbed() //
+                            // .setColor("AQUA") //
+                            // .setDescription(`${queue.songs.map((song, id) =>  `\n**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``)}` //
+                            // )]}); //
+
                     }
                     return;
                 }
